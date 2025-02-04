@@ -16,9 +16,9 @@ namespace AFNotificacionesAutomaticas
         }
 
         [Function("PostToApi")]
-        public async Task Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, FunctionContext context)
+        public async Task Run([TimerTrigger("0 0 10 * * *")] TimerInfo myTimer, FunctionContext context)
         {
-            //"0 0 0 * * *"
+            // TODOS LOS DIAS A LAS 10 :00 AM
             var logger = context.GetLogger("PostToApi");
             logger.LogInformation($"Funcion ejecutada: {DateTime.UtcNow}");
 
