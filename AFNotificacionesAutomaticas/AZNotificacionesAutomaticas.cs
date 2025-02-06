@@ -16,7 +16,7 @@ namespace AFNotificacionesAutomaticas
         }
 
         [Function("PostToApi")]
-        public async Task Run([TimerTrigger("0 0 10 * * *")] TimerInfo myTimer, FunctionContext context)
+        public async Task Run([TimerTrigger("0 0 13 * * *")] TimerInfo myTimer, FunctionContext context)
         {
             // TODOS LOS DIAS A LAS 10 :00 AM
             var logger = context.GetLogger("PostToApi");
@@ -48,7 +48,7 @@ namespace AFNotificacionesAutomaticas
 
                 if (response.IsSuccessStatusCode)
                 {
-                    logger.LogInformation($"Éxito: {responseContent}");
+                    logger.LogInformation($"ï¿½xito: {responseContent}");
                 }
                 else
                 {
@@ -57,7 +57,7 @@ namespace AFNotificacionesAutomaticas
             }
             catch (Exception ex)
             {
-                logger.LogError($"Excepción: {ex.Message}");
+                logger.LogError($"Excepciï¿½n: {ex.Message}");
             }
         }
     }
